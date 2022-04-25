@@ -62,10 +62,10 @@ for i in range(10):
         for part in list:
             part.write(str(i) + " Aanlysis "+ " Sentiments " + str(i))
             response = requests.get(links[count])
-            file = open(("NewsAggregation/Streamlit/"+str(uid[count])+".png"), "wb")
+            file = open((str(uid[count])+".png"), "wb")
             file.write(response.content)
             file.close()
-            image = Image.open("NewsAggregation/Streamlit/"+str(uid[count])+".png")
+            image = Image.open(str(uid[count])+".png")
             part.image(image,width=300)
             part.title(news_tit[count][:70])
             part.write(news_summary1[count])
