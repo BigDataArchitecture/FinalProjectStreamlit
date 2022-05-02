@@ -28,6 +28,7 @@ def news_main_twitter():
                 try:
                     st.write("Inside loop")
                     m2,m3 = st.columns((3,5))
+                    m2.write("Inside loop")
                     news_sentiment_score = str(round(data['news_sentiments'][0]['score']*100,2))
                     news_sentiment_text = data['news_sentiments'][0]['label']
                     save_path = get_image(data['news_top_image'],data['_id'])
