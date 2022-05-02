@@ -26,6 +26,7 @@ def news_main_twitter():
                 break
             else:
                 try:
+                    st.write("Inside loop")
                     m2,m3 = st.columns((3,5))
                     news_sentiment_score = str(round(data['news_sentiments'][0]['score']*100,2))
                     news_sentiment_text = data['news_sentiments'][0]['label']
