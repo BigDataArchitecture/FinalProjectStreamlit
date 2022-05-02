@@ -6,6 +6,7 @@ from Twitter_Code import twitter_beautification
 
 
 def news_main_twitter():
+    st.write("Twiiter")
     all_data = Get_data.access_data()
     # all_data = Get_data.filter_data(country_selections)
     def news_beautification(column,news_title,news_sentiment_score,news_sentiment_text,keywords,save_path,summary):
