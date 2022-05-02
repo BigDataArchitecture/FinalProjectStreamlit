@@ -10,16 +10,16 @@ st.set_page_config(
 )
 
 def main_page():
-    all_data = Get_data.column_specific_data('news_Country')
-    country_selections = st.sidebar.multiselect(
-    "Select Accounts to View", all_data,all_data[0])
+    # all_data = Get_data.column_specific_data('news_Country')
+    # country_selections = st.sidebar.multiselect(
+    # "Select Accounts to View", all_data,all_data[0])
     genre = st.sidebar.radio(
      "Select a Viewing Mode",
      ('Original','Social Media'))    
     if genre == 'Social Media':
-        News_Twitter.news_main_twitter(country_selections)
+        News_Twitter.news_main_twitter()
     else:
-        Only_News.news_main(country_selections)
+        Only_News.news_main()
 
 if __name__ == '__main__':
     main_page()
