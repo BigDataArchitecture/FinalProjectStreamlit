@@ -2,7 +2,6 @@ import pymongo
 import streamlit as st
 
 
-     
 def access_data():
     client = pymongo.MongoClient("mongodb+srv://team3:qHovInc8WtqPBs7k@newsmonitor.uzcq9.mongodb.net/UserData?retryWrites=true&w=majority")
     print(client["News"])
