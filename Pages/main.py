@@ -34,10 +34,10 @@ def main_page():
         <img src="https://img.icons8.com/clouds/40/000000/united-arab-emirates.png"/>
         """
         ,unsafe_allow_html=True)
-    # if genre == 'ᓬ News+Social Media':
-    #     News_Twitter.news_main_twitter(country_selections)
-    # if genre == '📰 News':
-    #     Only_News.news_main(country_selections)
+    if genre == 'ᓬ News+Social Media':
+        News_Twitter.news_main_twitter(country_selections)
+    if genre == '📰 News':
+        Only_News.news_main(country_selections)
     if genre == '📊 User Analytics':
         st.write("User Analytics")
         if st.button("Clicl me"):
