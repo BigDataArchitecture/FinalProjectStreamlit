@@ -17,6 +17,7 @@ def main_page():
      "Select a Viewing Mode",
      ('Original','Social Media'))    
     if genre == 'Social Media':
+        st.write("News")
         News_Twitter.news_main_twitter()
     else:
         Only_News.news_main()
