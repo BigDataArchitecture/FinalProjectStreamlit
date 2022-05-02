@@ -23,7 +23,6 @@ def column_specific_data(columnname):
 def filter_data(country_selections):
     print(country_selections)
     myquery = {"news_Country": country_selections[-1]}
-    print(myquery)
     client = pymongo.MongoClient("mongodb+srv://team3:qHovInc8WtqPBs7k@newsmonitor.uzcq9.mongodb.net/UserData?retryWrites=true&w=majority")
     print(client["News"])
     db = client["News"]

@@ -8,8 +8,8 @@ def news_main(country_selections):
     all_data = Get_data.filter_data(country_selections)
     def news_beautification(column,news_title,news_sentiment_score,news_sentiment_text,keywords,save_path,summary,country,source):
         image = Image.open(save_path)
-        column.image(image,width=350)
-        column.markdown('<style> .intro{ width: 350px;border: 3px solid #1DA1F2; padding: 10px;}</style><div class="intro"><p style="font-family:Times New Roman; color: '
+        column.image(image,width=390)
+        column.markdown('<style> .intro{ width: 390px;border: 3px solid #1DA1F2; padding: 10px;}</style><div class="intro"><p style="font-family:Times New Roman; color: '
         + change(news_sentiment_text, color = True)+'; font-size: 20px;">' 
         + change(news_sentiment_text, color = False) + " "+ news_sentiment_score + "%"  + '</p>'+ keywords + '<h4>'
         + news_title + '</h4><p style = "text-align: justify;text-justify: inter-word;">'+summary+
