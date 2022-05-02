@@ -30,4 +30,5 @@ def get_image(link,uid):
     file = open(save_path, "wb")
     file.write(response.content)
     file.close()
+    print("saved")
     return save_path
