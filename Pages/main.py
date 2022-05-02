@@ -14,8 +14,8 @@ st.set_page_config(
 
 
 def main_page():
-    image = Image.open('logo.png')
-    st.sidebar.image(image,width=200)
+    # image = Image.open('logo.png')
+    # st.sidebar.image(image,width=200)
     genre = st.sidebar.radio(
      "What do You want to do today?",
      ('📰 News','ᓬ News+Social Media','📊 User Analytics','🗺 Explore Models'))    
