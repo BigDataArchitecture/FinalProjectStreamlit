@@ -24,6 +24,7 @@ def keyword_beautificaiton(list1):
 
 
 def get_image(link,uid):
+    print("pathhh")
     response = requests.get(link)
     save_path = "../images/" + (str(uid)+".png")
     print("pathhh")

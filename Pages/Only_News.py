@@ -61,6 +61,7 @@ def news_main():
                 for part in list:
                     news_sentiment_score = str(round(sentiments[count]*100,2))
                     news_sentiment_text = text_sentiments[count]
+                    st.write("Before save")
                     save_path = get_image(links[count],uid[count])
                     news_beautification(part,news_tit[count],news_sentiment_score,news_sentiment_text,keyword_beautificaiton(keywords_list[count]),save_path,news_summary1[count],country[count],source[count])
                     count = count + 1
