@@ -6,8 +6,7 @@ import numpy as np
 from matplotlib import pyplot as plt 
 from PIL import Image
 import streamlit_authenticator as stauth
-from Signup import signup_function
-import Pages.main
+import main
 
 st.set_page_config(
     page_title="BERT Keyword Extractor",
@@ -24,7 +23,7 @@ authenticator = stauth.Authenticate(names,usernames,hashed_passwords,
 name, authentication_status, username = authenticator.login('Login','main')
 
 if authentication_status:
-    Pages.main.main_page()
+    main.main_page()
     st.write("Logged In")
 elif authentication_status == False:
     st.error('Username/password is incorrect')

@@ -26,7 +26,6 @@ def news_main(country_selections):
     text_sentiments = []
     keywords_list = []
     for data in all_data:
-        print(data['news_title'])
         try:
             uid.append(data['_id'])
             links.append(data['news_top_image'])
