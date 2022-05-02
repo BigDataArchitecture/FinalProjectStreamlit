@@ -26,11 +26,8 @@ def news_main_twitter():
                 break
             else:
                 try:
-                    st.write("Inside loop")
                     m2,m3 = st.columns((3,5))
-                    m2.write("Inside loop")
                     news_sentiment_score = str(round(data['news_sentiments'][0]['score']*100,2))
-                    m3.write("Inside loop")
                     news_sentiment_text = data['news_sentiments'][0]['label']
                     save_path = get_image(data['news_top_image'],data['_id'])
                     news_beautification(m2,data['news_title'],news_sentiment_score,news_sentiment_text,keyword_beautificaiton(data['news_keywords']),save_path,data['news_summary'])

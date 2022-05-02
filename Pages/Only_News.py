@@ -26,25 +26,30 @@ def news_main():
     sentiments = []
     text_sentiments = []
     keywords_list = []
+    counter_data = 1
     for data in all_data:
-        print(data['news_title'])
-        try:
-            uid.append(data['_id'])
-            links.append(data['news_top_image'])
-            news_tit.append(data['news_title'])
-            news_summary1.append(data['news_summary'])
-            country.append(data['news_Country'])
-            source.append(data['news_source'])
-            keywords_list.append(data['news_keywords'])
+        if counter_data == 11:
+            break
+        else:
             try:
-                sentiments.append(data['news_sentiments'][0]['score'])
-                text_sentiments.append(data['news_sentiments'][0]['label'])
+                uid.append(data['_id'])
+                links.append(data['news_top_image'])
+                news_tit.append(data['news_title'])
+                news_summary1.append(data['news_summary'])
+                country.append(data['news_Country'])
+                source.append(data['news_source'])
+                keywords_list.append(data['news_keywords'])
+                try:
+                    sentiments.append(data['news_sentiments'][0]['score'])
+                    text_sentiments.append(data['news_sentiments'][0]['label'])
+                except:
+                    sentiments.append(data['news_sentiments'])
+                    text_sentiments.append(data['news_sentiments'])
+                counter_data = counter_data + 1
             except:
-                sentiments.append(data['news_sentiments'])
-                text_sentiments.append(data['news_sentiments'])
-        except:
-            continue
+                continue
 
+    print(keywords_list)
     count = 1
     for data in range(12):
         if count == 12:
