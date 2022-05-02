@@ -3,6 +3,7 @@ import streamlit.components.v1 as components
 import News_Twitter,Only_News
 import Get_data
 import models
+from PIL import Image
 
 st.set_page_config(
     page_title="Twiiter",
@@ -13,18 +14,30 @@ st.set_page_config(
 
 
 def main_page():
+    image = Image.open('logo.png')
+    st.sidebar.image(image,width=200)
+    genre = st.sidebar.radio(
+     "What do You want to do today?",
+     ('📰 News','ᓬ News+Social Media','📊 User Analytics','🗺 Explore Models'))    
+
     country_list = ['India ', 'Russia']
+    st.sidebar.markdown('<p style="background-color:powderblue;">Filters for News</p>',unsafe_allow_html=True)
     # all_data = Get_data.column_specific_data('news_Country')
     country_selections = st.sidebar.multiselect(
-    "Select Accounts to View", country_list,['India '])
-    st.sidebar.markdown('<img src="https://img.icons8.com/external-sbts2018-flat-sbts2018/30/000000/external-india-gate-monuments-sbts2018-flat-sbts2018.png"/><img src="https://img.icons8.com/clouds/30/000000/russian-federation.png"/>',unsafe_allow_html=True)
-    genre = st.sidebar.radio(
-     "Select a Country Mode",
-     ('📰 News','ᓬ News+Social Media','📊 User Analytics','🗺 Explore Models'))    
-    if genre == 'ᓬ News+Social Media':
-        News_Twitter.news_main_twitter(country_selections)
-    if genre == '📰 News':
-        Only_News.news_main(country_selections)
+    "Select a Country", country_list,['India '])
+    st.sidebar.markdown("""
+        <img src="https://img.icons8.com/clouds/40/000000/india.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/russian-federation.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/china.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/usa.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/germany.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/united-arab-emirates.png"/>
+        """
+        ,unsafe_allow_html=True)
+    # if genre == 'ᓬ News+Social Media':
+    #     News_Twitter.news_main_twitter(country_selections)
+    # if genre == '📰 News':
+    #     Only_News.news_main(country_selections)
     if genre == '📊 User Analytics':
         st.write("User Analytics")
         if st.button("Clicl me"):
