@@ -7,7 +7,13 @@ from matplotlib import pyplot as plt
 from PIL import Image
 import streamlit_authenticator as stauth
 from Signup import signup_function
-from main import main_page
+from Pages.main import main_page
+
+st.set_page_config(
+    page_title="BERT Keyword Extractor",
+    page_icon="🎈",
+    layout="wide"
+)
 
 names = ['John Smith','Rebecca Briggs','parth shah','Admin']
 usernames = ['Sreepad','Ankana','Parth','Admin']
