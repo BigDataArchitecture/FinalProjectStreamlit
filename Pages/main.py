@@ -20,11 +20,11 @@ def main_page():
      "What do You want to do today?",
      ('📰 News','ᓬ News+Social Media','📊 User Analytics','🗺 Explore Models'))    
 
-    country_list = ['India ', 'Russia']
+    country_list = ['India ', 'Russia', ]
     st.sidebar.markdown('<p style="background-color:powderblue;">Filters for News</p>',unsafe_allow_html=True)
-    # all_data = Get_data.column_specific_data('news_Country')
+    all_data = Get_data.column_specific_data('news_Country')
     country_selections = st.sidebar.multiselect(
-    "Select a Country", country_list,['India '])
+    "Select a Country", all_data,['India '])
     st.sidebar.markdown("""
         <img src="https://img.icons8.com/clouds/40/000000/india.png"/>
         <img src="https://img.icons8.com/clouds/40/000000/russian-federation.png"/>
