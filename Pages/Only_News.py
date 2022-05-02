@@ -8,8 +8,8 @@ def news_main():
     all_data = Get_data.access_data()
     # all_data = Get_data.filter_data(country_selections)
     def news_beautification(column,news_title,news_sentiment_score,news_sentiment_text,keywords,save_path,summary,country,source):
-        # image = Image.open(save_path)
-        # column.image(image,width=400)
+        image = Image.open(save_path)
+        column.image(image,width=400)
         column.markdown('<style> .intro{ width: 400px;border: 3px solid #1DA1F2; padding: 10px;}</style><div class="intro"><p style="font-family:Times New Roman; color: '
         + change(news_sentiment_text, color = True)+'; font-size: 20px;">' 
         + change(news_sentiment_text, color = False) + " "+ news_sentiment_score + "%"  + '</p>'+ keywords + '<h4>'
@@ -61,8 +61,7 @@ def news_main():
                 for part in list:
                     news_sentiment_score = str(round(sentiments[count]*100,2))
                     news_sentiment_text = text_sentiments[count]
-                    # save_path = get_image(links[count],uid[count])
-                    save_path = ""
+                    save_path = get_image(links[count],uid[count])
                     news_beautification(part,news_tit[count],news_sentiment_score,news_sentiment_text,keyword_beautificaiton(keywords_list[count]),save_path,news_summary1[count],country[count],source[count])
                     count = count + 1
                 st.write('----------------------------------------')
