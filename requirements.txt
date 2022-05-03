@@ -7,3 +7,6 @@ keybert
 flair
 transformers
 seaborn
+streamlit_authenticator
+matplotlib==3.5.1
+streamlit_authenticator
