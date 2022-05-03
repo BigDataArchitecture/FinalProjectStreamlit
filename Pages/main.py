@@ -7,8 +7,8 @@ from PIL import Image
 import json
 from bs4 import BeautifulSoup
 
-template = open('home.html')
-soup = BeautifulSoup(template.read(), "html.parser")
+# template = open('home.html')
+# soup = BeautifulSoup(template.read(), "html.parser")
 
 # from datetime import datetime
 # now = datetime.now()
