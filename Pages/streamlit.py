@@ -27,8 +27,6 @@ name, authentication_status, username = authenticator.login('Login','main')
 
 if authentication_status:
     main.main_page(username)
-    query = """INSERT INTO `bigdata-assignment-340502.news_user_details.user_logins` VALUES ({},'{}','{}','{}','{}','{}') """.format(1,'parth','Shah',username,'parth981gmail.com',now)
-    query_job = client.query(query)
     st.write("Logged In")
 elif authentication_status == False:
     st.error('Username/password is incorrect')
