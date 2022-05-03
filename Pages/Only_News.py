@@ -2,19 +2,10 @@ import streamlit as st
 import Get_data
 from helper import change,keyword_beautificaiton,get_image
 from PIL import Image
-from google.cloud import bigquery
-from google.oauth2 import service_account
 import json
 import email_html
 from datetime import datetime
 now = datetime.now()
-
-with open('bigdata-assignment-340502-766cad4a3cbf.json') as source:
-    info = json.load(source)
-
-credentials = service_account.Credentials.from_service_account_info(info)
-projectid = "bigdata-assignment-340502"
-client = bigquery.Client(credentials= credentials,project=projectid)
 
 
 

@@ -7,15 +7,6 @@ from matplotlib import pyplot as plt
 from PIL import Image
 import streamlit_authenticator as stauth
 import main
-from google.cloud import bigquery
-from google.oauth2 import service_account
-
-with open('bigdata-assignment-340502-766cad4a3cbf.json') as source:
-    info = json.load(source)
-
-credentials = service_account.Credentials.from_service_account_info(info)
-projectid = "bigdata-assignment-340502"
-client = bigquery.Client(credentials= credentials,project=projectid)
 
 from datetime import datetime
 now = datetime.now()

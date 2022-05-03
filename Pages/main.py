@@ -4,8 +4,6 @@ import News_Twitter,Only_News
 import Get_data
 import models
 from PIL import Image
-from google.cloud import bigquery
-from google.oauth2 import service_account
 import json
 
 # from datetime import datetime
