@@ -1,8 +1,4 @@
-from tkinter import Button
 import streamlit as st
-import requests
-import json
-import numpy as np
 from matplotlib import pyplot as plt 
 from PIL import Image
 import streamlit_authenticator as stauth
