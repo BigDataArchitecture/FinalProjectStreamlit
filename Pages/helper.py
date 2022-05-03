@@ -2,25 +2,28 @@ import requests
 
 def change(keyword, color = True):
     if color:
-        if keyword == 'NEU':
+        if keyword == 'NEU' or keyword == 'neutral':
             return 'Blue'
-        if keyword == 'NEG':
+        if keyword == 'NEG' or keyword == 'negative':
             return 'Red'
-        if keyword == 'POS':
+        if keyword == 'POS' or keyword == 'positive':
             return 'Green'
     else:
-        if keyword == 'NEU':
+        if keyword == 'NEU' or keyword == 'neutral':
             return 'Neutral'
-        if keyword == 'NEG':
+        if keyword == 'NEG' or keyword == 'negative':
             return 'Negative'
-        if keyword == 'POS':
+        if keyword == 'POS' or keyword == 'positive':
             return 'Positive'
 
 def keyword_beautificaiton(list1):
-    concat =  ""
-    for i in range(4):
-        concat = concat + " " + list1[i].upper()
-    return concat
+    try:
+        concat =  ""
+        for i in range(4):
+            concat = concat + " " + list1[i].upper()
+        return concat
+    except:
+        return "No Keyword"
 
 
 def get_image(link,uid):
@@ -33,3 +36,16 @@ def get_image(link,uid):
     file.close()
     print("saved")
     return save_path
+
+
+def convert(lst):
+    return (lst[0].split())
+
+def clear_summary(text):
+    list1 = text.split()
+    for i in list1:
+        if len(str(i)) > 15:
+            return False
+        else:
+            continue
+    return True

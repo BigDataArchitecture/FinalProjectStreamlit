@@ -5,6 +5,10 @@ import Get_data
 import models
 from PIL import Image
 import json
+from bs4 import BeautifulSoup
+
+template = open('home.html')
+soup = BeautifulSoup(template.read(), "html.parser")
 
 # from datetime import datetime
 # now = datetime.now()
@@ -25,20 +29,33 @@ import json
 
 
 def main_page(username):
+    st.sidebar.markdown('<img style = "box-shadow: 6px 6px 29px -4px rgba(0, 0, 0, 0.75);" width=290px src="http://drive.google.com/uc?export=view&id=1guCiLr77Ih852eDF__X4kvlHcPo-D94F"/>',unsafe_allow_html=True)
+    st.sidebar.markdown('<hr></hr>',unsafe_allow_html=True)
     st.write("Welcome:",username)
     # image = Image.open('logo.png')
     # st.sidebar.image(image,width=200)
     genre = st.sidebar.radio(
-     "What do You want to do today?",
-     ('Home','📰 News','ᓬ News+Social Media','📊 User Analytics','🗺 Explore Models'))    
+     "Options: ",
+     ('Home','📰 News','ᓬ News+Social Media','🗺 Explore Models'))    
 
     country_list = ['India ', 'Russia', ]
-    st.sidebar.markdown('<p style="background-color:powderblue;">Filters for News</p>',unsafe_allow_html=True)
+    st.sidebar.markdown('<p><b><i><h2>Filters for News</p>',unsafe_allow_html=True)
     all_data = Get_data.column_specific_data('news_Country')
     topic = Get_data.column_specific_data('news_topic') 
     
     topic_selections = st.sidebar.multiselect(
     "Select a Topic", topic,['Business'])
+
+    st.sidebar.markdown("""
+        <img src="https://img.icons8.com/clouds/40/000000/small-business.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/globe--v2.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/track-and-field.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/literature.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/robot.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/united-arab-emirates.png"/>
+        """
+        ,unsafe_allow_html=True)
+
 
     country_selections = st.sidebar.multiselect(
     "Select a Country", all_data,['Australia'])
@@ -49,19 +66,17 @@ def main_page(username):
         <img src="https://img.icons8.com/clouds/40/000000/china.png"/>
         <img src="https://img.icons8.com/clouds/40/000000/usa.png"/>
         <img src="https://img.icons8.com/clouds/40/000000/germany.png"/>
-        <img src="https://img.icons8.com/clouds/40/000000/united-arab-emirates.png"/>
+        <img src="https://img.icons8.com/clouds/40/000000/stethoscope.png"/>
         """
         ,unsafe_allow_html=True)
+
     if genre == 'Home':
         st.write('Home')
+        # st.markdown(soup,unsafe_allow_html=True)
     if genre == 'ᓬ News+Social Media':
         News_Twitter.news_main_twitter(country_selections,topic_selections)
     if genre == '📰 News':
         Only_News.news_main(country_selections,topic_selections,username)
-    if genre == '📊 User Analytics':
-        st.write("User Analytics")
-        if st.button("Clicl me"):
-            st.write("Smart")
     if genre == '🗺 Explore Models':
         models.explore_models()
         st.write("Explore our Models")

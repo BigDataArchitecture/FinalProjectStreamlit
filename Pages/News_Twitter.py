@@ -1,9 +1,9 @@
 import streamlit as st
 import Get_data
-from helper import change,keyword_beautificaiton,get_image
+from helper import change,keyword_beautificaiton,get_image,clear_summary
 from PIL import Image
 from Twitter_Code import twitter_beautification
-
+from bokeh.models.widgets import Div
 
 def news_main_twitter(country_selections,topic_selections):
     all_data = Get_data.filter_data(country_selections,topic_selections)
@@ -27,9 +27,21 @@ def news_main_twitter(country_selections,topic_selections):
                     news_sentiment_score = str(round(data['news_sentiments'][0]['score']*100,2))
                     news_sentiment_text = data['news_sentiments'][0]['label']
                     save_path = get_image(data['news_top_image'],data['_id'])
-                    news_beautification(m2,data['news_title'],news_sentiment_score,news_sentiment_text,keyword_beautificaiton(data['news_keywords']),save_path,data['news_summary'])
+                    if clear_summary(data['news_summary']):
+                        summary = data['news_summary']
+                    else:
+                        continue
+                    news_beautification(m2,data['news_title'],news_sentiment_score,news_sentiment_text,keyword_beautificaiton(data['news_keywords']),save_path, summary)
                     for j in range(min(len(data['news_tweets']),4)):
                         twitter_beautification(m3,data['news_tweets'][str(j)]['user']['displayname'],data['news_tweets'][str(j)]['user']['username'],data['news_tweets'][str(j)]['content'],data['news_tweets'][str(j)]['likeCount'],data['news_tweets'][str(j)]['retweetCount'],data['news_tweets'][str(j)]['user']['followersCount'],data['news_tweets'][str(j)]['user']['location'])
+                    if m2.button("Read Full Article",key = count): 
+                        js = "window.open('" + data['news_link']+"')"  # New tab or window
+                        # js = "window.location.href = '"+news_links[count]+"'" # Current tab
+                        html = '<img src onerror="{}">'.format(js)
+                        print(html)
+                        div = Div(text=html)
+                        st.bokeh_chart(div)
+                    
                     st.write('----------------------------------------')
                     count = count + 1
                     print(count)
