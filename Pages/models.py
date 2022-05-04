@@ -8,6 +8,11 @@ from flair.embeddings import TransformerDocumentEmbeddings
 import seaborn as sns
 import os
 import json
+import spacy
+from spacy_streamlit import visualize_ner
+
+
+import ast
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline, AutoModelForTokenClassification
 
 def explore_models():
@@ -155,6 +160,50 @@ def explore_models():
         stripped_string = replace_fun(an['answer'])
         stripped_string = camel_case(an['answer'])
         st.write(stripped_string)
+    if NER:
+        entity_list = []
+        def NLP_NER_OUTPUT(event):
+            url = 'https://0rwjoafjn8.execute-api.us-east-1.amazonaws.com/dev/qa'
+            response1 = requests.post(url,json=event)
+            output1 = response1.content.decode()
+            an1 = json.loads(output1)
+            print(an1)
+            try:
+                a1 = an1['answer']
+                b = str(a1)
+                Final_dict = ''
+                list_b = list(b)
+                for i in range(1,len(list_b)-1):
+                    Final_dict = Final_dict +list_b[i]
+                es = ast.literal_eval(Final_dict)
+                return es
+            except:
+                return 1
+        nlp = spacy.load("en_core_web_sm")
+        doc = nlp(doc)
+        visualize_ner(doc, labels=nlp.get_pipe("ner").labels)
+        print(visualize_ner)
+        # nlp = spacy.load("en_core_web_lg")
+        # text = nlp(doc)
+        # event = {"context": doc}
+        # for entity in text.ents:
+        #     st.write(entity.text, entity.label_)
+        # output_dict = NLP_NER_OUTPUT(event)
+        # print(output_dict)
+        # if output_dict == 1:
+        #     st.write('Nothing found for NER')
+        # else:
+        #     for i in range(len(output_dict)):
+        #         if output_dict[i]['score'] > 0.99:
+        #             print(output_dict[i]['entity'])
+        #             print(output_dict[i]['word'])
+        #             entity_list.append(output_dict[i]['word'])
+        #             print(entity_list)
+        # st.title("Entities Identified")
+        # st.write(entity_list)
+
+            
+
 
 if __name__ == '__main__':
     explore_models()    

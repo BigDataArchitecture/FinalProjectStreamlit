@@ -72,6 +72,8 @@ def main_page(username):
 
     if genre == 'Home':
         st.write('Home')
+        st.title('Overview of our Big Data')
+        st.markdown('<iframe  width="1400" height="900" style="background: #F1F5F4;border: none;border-radius: 2px;box-shadow: 0 2px 10px 0 rgba(70, 76, 79, .2);"  src="https://charts.mongodb.com/charts-project-0-hcexa/embed/dashboards?id=6272c95f-8933-41d0-8b88-c7a9b5f3b967&theme=light&autoRefresh=true&maxDataAge=3600&showTitleAndDesc=false&scalingWidth=fixed&scalingHeight=fixed"></iframe>',unsafe_allow_html=True)
         # st.markdown(soup,unsafe_allow_html=True)
     if genre == 'ᓬ News+Social Media':
         News_Twitter.news_main_twitter(country_selections,topic_selections)
