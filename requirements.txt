@@ -10,3 +10,5 @@ seaborn
 streamlit_authenticator
 matplotlib==3.5.1
 streamlit_authenticator
+spacy
+spacy_streamlit
