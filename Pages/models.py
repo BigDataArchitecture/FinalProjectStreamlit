@@ -10,6 +10,8 @@ import os
 import json
 import spacy
 from spacy_streamlit import visualize_ner
+import en_core_web_sm
+nlp = en_core_web_sm.load()
 
 
 import ast
@@ -179,7 +181,7 @@ def explore_models():
                 return es
             except:
                 return 1
-        nlp = spacy.load("en_core_web_sm")
+        nlp = en_core_web_sm.load()
         doc = nlp(doc)
         visualize_ner(doc, labels=nlp.get_pipe("ner").labels)
         print(visualize_ner)
