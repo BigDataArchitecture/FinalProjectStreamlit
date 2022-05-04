@@ -12,3 +12,4 @@ matplotlib==3.5.1
 streamlit_authenticator
 spacy
 spacy_streamlit
+en_core_web_sm
