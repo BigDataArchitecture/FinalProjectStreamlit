@@ -1,7 +1,3 @@
-import json
-import torch
-from transformers import AutoModelForQuestionAnswering, AutoTokenizer, AutoConfig
-import pymongo
 import spacy
 
 def NER_keywrod(sentence):
