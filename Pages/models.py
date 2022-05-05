@@ -8,11 +8,8 @@ from flair.embeddings import TransformerDocumentEmbeddings
 import seaborn as sns
 import os
 import json
-# import spacy
-# from spacy_streamlit import visualize_ner
+import spacy
 import streamlit as st
-# from spacy_streamlit import load_model
-# from spacy_streamlit import visualize_ner
 import ast
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline, AutoModelForTokenClassification
 
