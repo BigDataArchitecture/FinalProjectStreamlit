@@ -17,7 +17,7 @@ def NER_keywrod(sentence):
             print('No named entities found.')
             return list_keywords
             
-    nlp = spacy.load('Models/en_core_web_sm-3.0.0')
+    nlp = spacy.load('en_core_web_sm-3.0.0')
     doc = nlp(sentence)
     list_keywords =  show_ents(doc)
     return list_keywords
