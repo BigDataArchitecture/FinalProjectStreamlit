@@ -27,3 +27,13 @@ def filter_data(country_selections,topic_selection):
     collection = db["GoogleAPI_links"]
     mydoc = collection.find(myquery)
     return mydoc
+
+def regex_filter_data(keyword):
+    myquery = {"$text" : {"$search": keyword} }
+    print(myquery)
+    client = pymongo.MongoClient("mongodb+srv://team3:qHovInc8WtqPBs7k@newsmonitor.uzcq9.mongodb.net/UserData?retryWrites=true&w=majority")
+    print(client["News"])
+    db = client["News"]
+    collection = db["GoogleAPI_links"]
+    mydoc = collection.find(myquery)
+    return mydoc
