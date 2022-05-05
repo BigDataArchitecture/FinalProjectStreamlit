@@ -8,8 +8,8 @@ from flair.embeddings import TransformerDocumentEmbeddings
 import seaborn as sns
 import os
 import json
-import spacy
-from spacy_streamlit import visualize_ner
+# import spacy
+# from spacy_streamlit import visualize_ner
 import ast
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline, AutoModelForTokenClassification
 
@@ -160,9 +160,9 @@ def explore_models():
         stripped_string = camel_case(an['answer'])
         st.write(stripped_string)
     if NER:
-        def load_model(name: str) -> spacy.language.Language:
-            """Load a spaCy model."""
-            return spacy.load(name)
+        # def load_model(name: str) -> spacy.language.Language:
+        #     """Load a spaCy model."""
+        #     return spacy.load(name)
         entity_list = []
         def NLP_NER_OUTPUT(event):
             url = 'https://0rwjoafjn8.execute-api.us-east-1.amazonaws.com/dev/qa'
@@ -181,28 +181,28 @@ def explore_models():
                 return es
             except:
                 return 1
-        nlp = load_model("en_core_web_sm")
-        doc = nlp(doc)
-        visualize_ner(doc, labels=nlp.get_pipe("ner").labels)
-        print(visualize_ner)
+        # nlp = load_model("en_core_web_sm")
+        # doc = nlp(doc)
+        # visualize_ner(doc, labels=nlp.get_pipe("ner").labels)
+        # print(visualize_ner)
         # nlp = spacy.load("en_core_web_lg")
         # text = nlp(doc)
         # event = {"context": doc}
         # for entity in text.ents:
         #     st.write(entity.text, entity.label_)
-        # output_dict = NLP_NER_OUTPUT(event)
-        # print(output_dict)
-        # if output_dict == 1:
-        #     st.write('Nothing found for NER')
-        # else:
-        #     for i in range(len(output_dict)):
-        #         if output_dict[i]['score'] > 0.99:
-        #             print(output_dict[i]['entity'])
-        #             print(output_dict[i]['word'])
-        #             entity_list.append(output_dict[i]['word'])
-        #             print(entity_list)
-        # st.title("Entities Identified")
-        # st.write(entity_list)
+        output_dict = NLP_NER_OUTPUT(event)
+        print(output_dict)
+        if output_dict == 1:
+            st.write('Nothing found for NER')
+        else:
+            for i in range(len(output_dict)):
+                if output_dict[i]['score'] > 0.99:
+                    print(output_dict[i]['entity'])
+                    print(output_dict[i]['word'])
+                    entity_list.append(output_dict[i]['word'])
+                    print(entity_list)
+        st.title("Entities Identified")
+        st.write(entity_list)
 
             
 

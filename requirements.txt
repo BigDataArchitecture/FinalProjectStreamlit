@@ -1,7 +1,6 @@
 pymongo==4.1.1
 requests==2.27.1
-Typer == 0.4.0
-click == 8.0.4
+click<=8.0.4
 dnspython
 bokeh
 keybert
@@ -11,7 +10,6 @@ seaborn
 streamlit_authenticator
 matplotlib==3.5.1
 streamlit_authenticator
-spacy
-spacy_streamlit
-
-https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz#egg=en_core_web_sm
+# spacy
+# spacy_streamlit
+# https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.0.0/en_core_web_sm-3.0.0.tar.gz#egg=en_core_web_sm
