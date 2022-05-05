@@ -1,0 +1,27 @@
+name: PyTest
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  unit-testing:
+    runs-on: ubuntu-latest
+    steps:  
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: 🍽️ Checkout the repo
+        uses: actions/checkout@master
+        with:
+          fetch-depth: 1
+
+      - name: 🐍 Set up Python 3.8
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.8'
+
+      - name: 💿 Install Python package
+        run: pip install -r requirements.txt
+
+      - name: 🚀 Run Automation
+        run: coverage run -m pytest
