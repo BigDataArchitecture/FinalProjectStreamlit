@@ -1,5 +1,4 @@
 # content of test_sample.py
-from typing_extensions import assert_never
 from helper import change,keyword_beautificaiton,get_image,clear_summary
 from Get_data import access_data,filter_data
 
