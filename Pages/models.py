@@ -166,7 +166,7 @@ def explore_models():
         # spacy_model = st.sidebar.selectbox("Model name", ["en_core_web_sm", "en_core_web_md"])
         nlp = load_model("en_core_web_sm")
         doc = nlp(doc)
-        visualize_ner(doc, labels=nlp.get_pipe("ner").labels)
+        visualize_ner(doc,labels=nlp.get_pipe("ner").labels)
         # def load_model(name: str) -> spacy.language.Language:
         #     """Load a spaCy model."""
         #     return spacy.load(name)
@@ -210,8 +210,6 @@ def explore_models():
         #             print(entity_list)
         # st.title("Entities Identified")
         # st.write(entity_list)
-
-            
 
 
 if __name__ == '__main__':
