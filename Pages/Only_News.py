@@ -77,14 +77,15 @@ def news_main(country_selections,topic_selections,username):
                         news_sentiment_text = text_sentiments[count]
                         save_path = get_image(links[count],uid[count])
                         news_beautification(part,news_tit[count],news_sentiment_score,news_sentiment_text,keyword_beautificaiton(keywords_list[count]),save_path,news_summary1[count],country[count],source[count])
-                        if part.button("Read Full Article",key = count): 
-                            js = "window.open('" + news_links[count]+"')"  # New tab or window
-                            # js = "window.location.href = '"+news_links[count]+"'" # Current tab
-                            html = '<img src onerror="{}">'.format(js)
-                            print(html)
-                            div = Div(text=html)
-                            st.bokeh_chart(div)
-                            # email_html.email(news_tit[count],news_sentiment_score,change(news_sentiment_text,color= False),keyword_beautificaiton(keywords_list[count]),news_summary1[count],source[count],links[count])
+                        part.markdown(f"<a href = '{news_links[count]}'>Read News</a>",unsafe_allow_html=True)
+                        # if part.button("Read Full Article",key = count): 
+                        #     js = "window.open('" + news_links[count]+"')"  # New tab or window
+                        #     # js = "window.location.href = '"+news_links[count]+"'" # Current tab
+                        #     html = '<img src onerror="{}">'.format(js)
+                        #     print(html)
+                        #     div = Div(text=html)
+                        #     st.bokeh_chart(div)
+                        #     # email_html.email(news_tit[count],news_sentiment_score,change(news_sentiment_text,color= False),keyword_beautificaiton(keywords_list[count]),news_summary1[count],source[count],links[count])
                             # st.markdown(st.markdown('<iframe width="120" src="https://twitter.com/johnebhome/status/1520131611110563840"></iframe>', unsafe_allow_html=True))
                         count = count + 1
                     st.write('----------------------------------------')

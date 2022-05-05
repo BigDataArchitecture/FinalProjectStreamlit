@@ -69,6 +69,10 @@ def main_page(username):
         <img src="https://img.icons8.com/clouds/40/000000/stethoscope.png"/>
         """
         ,unsafe_allow_html=True)
+    
+    st.sidebar.markdown("<a href = 'https://docs.google.com/forms/d/e/1FAIpQLSfbS30zIv13_Yo7CnAh0EeP0mued87_qJuwW9mtp9Eugc26fw/viewform?fbzx=-4627928992702263573'>Subscribe to Newsletter</a>",unsafe_allow_html=True)
+
+    st.sidebar.write("All rights reserved BeeNews@2022")
 
     if genre == 'Home':
         st.write('Home')
