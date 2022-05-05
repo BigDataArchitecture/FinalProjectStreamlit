@@ -63,13 +63,13 @@ def test_access_data():
             counter = counter + 1
     assert(counter > 0)
 
-def test_column():
-    data = filter_data("Australia","Business")
-    counter = 0
-    for i in data:
-        if counter > 0:
-            break
-        else:
-            counter = counter + 1
-    assert(counter > 0)
+# def test_column():
+#     data = filter_data("Australia","Business")
+#     counter = 0
+#     for i in data:
+#         if counter > 0:
+#             break
+#         else:
+#             counter = counter + 1
+#     assert(counter > 0)
 
