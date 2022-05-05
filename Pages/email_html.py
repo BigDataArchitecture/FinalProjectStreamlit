@@ -9,8 +9,8 @@ from bs4 import BeautifulSoup
 import re
 from nltk import tokenize
 
-def email(news_title,news_sentiment_score,news_sentiment_text,keywords,summary,source,image_link):
-# def email():
+# def email(news_title,news_sentiment_score,news_sentiment_text,keywords,summary,source,image_link):
+def email():
     # news_title = "news_title"
     # news_sentiment_score = 50
     # news_sentiment_text = "Positive"
@@ -53,7 +53,7 @@ def email(news_title,news_sentiment_score,news_sentiment_text,keywords,summary,s
     port = 587  # For starttls
 
     sender_email = "bigdat517+1@gmail.com" # TODO: replace with your email address
-    receiver_email = ["parth981@gmail.com"] # TODO: replace with your recipients
+    receiver_email = ["parth981@gmail.com","sud.way1298@gmail.com"] # TODO: replace with your recipients
     password = 'syhrkmppaptdfdds'  # TODO: replace with your 16-digit-character password 
 
     # initialise message instance

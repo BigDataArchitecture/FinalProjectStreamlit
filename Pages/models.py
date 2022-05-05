@@ -10,12 +10,9 @@ import os
 import json
 import spacy
 from spacy_streamlit import visualize_ner
-import en_core_web_sm
-nlp = en_core_web_sm.load()
-
-
 import ast
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline, AutoModelForTokenClassification
+
 
 def explore_models():
 
@@ -163,6 +160,9 @@ def explore_models():
         stripped_string = camel_case(an['answer'])
         st.write(stripped_string)
     if NER:
+        def load_model(name: str) -> spacy.language.Language:
+            """Load a spaCy model."""
+            return spacy.load(name)
         entity_list = []
         def NLP_NER_OUTPUT(event):
             url = 'https://0rwjoafjn8.execute-api.us-east-1.amazonaws.com/dev/qa'
@@ -181,7 +181,7 @@ def explore_models():
                 return es
             except:
                 return 1
-        nlp = en_core_web_sm.load()
+        nlp = load_model("en_core_web_sm")
         doc = nlp(doc)
         visualize_ner(doc, labels=nlp.get_pipe("ner").labels)
         print(visualize_ner)
