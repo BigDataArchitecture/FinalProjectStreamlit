@@ -11,8 +11,8 @@ import json
 # import spacy
 # from spacy_streamlit import visualize_ner
 import streamlit as st
-from spacy_streamlit import load_model
-from spacy_streamlit import visualize_ner
+# from spacy_streamlit import load_model
+# from spacy_streamlit import visualize_ner
 import ast
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline, AutoModelForTokenClassification
 
@@ -164,9 +164,9 @@ def explore_models():
     if NER:
         from spacy_streamlit import load_model
         # spacy_model = st.sidebar.selectbox("Model name", ["en_core_web_sm", "en_core_web_md"])
-        nlp = load_model("en_core_web_sm")
-        doc = nlp(doc)
-        visualize_ner(doc,labels=nlp.get_pipe("ner").labels)
+        # nlp = load_model("en_core_web_sm")
+        # doc = nlp(doc)
+        # visualize_ner(doc,labels=nlp.get_pipe("ner").labels)
         # def load_model(name: str) -> spacy.language.Language:
         #     """Load a spaCy model."""
         #     return spacy.load(name)

@@ -36,7 +36,7 @@ def main_page(username):
     # st.sidebar.image(image,width=200)
     genre = st.sidebar.radio(
      "Options: ",
-     ('Home','📰 News','ᓬ News+Social Media','🗺 Explore Models'))    
+     ('Home','📰 News','ᓬ News+Social Media','🗺 Explore Models','🙃About Us','👩🏽‍🎨Careers'))    
 
     country_list = ['India ', 'Russia', ]
     st.sidebar.markdown('<p><b><i><h2>Filters for News</p>',unsafe_allow_html=True)
@@ -86,6 +86,7 @@ def main_page(username):
     if genre == '🗺 Explore Models':
         models.explore_models()
         st.write("Explore our Models")
+
 
         
 
