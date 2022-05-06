@@ -8,7 +8,7 @@ from flair.embeddings import TransformerDocumentEmbeddings
 import seaborn as sns
 import os
 import json
-import spacy
+# import spacy
 import streamlit as st
 import ast
 from transformers import AutoTokenizer, AutoModelForSequenceClassification, pipeline, AutoModelForTokenClassification
