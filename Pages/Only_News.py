@@ -5,7 +5,6 @@ from helper import change,keyword_beautificaiton,get_image,clear_summary
 from PIL import Image
 import json
 import email_html
-from bokeh.models.widgets import Div
 # import NER
 from datetime import datetime
 now = datetime.now()
