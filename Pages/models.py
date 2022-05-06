@@ -77,7 +77,10 @@ def explore_models():
         with c2:
             doc = st.text_area(
                 "Paste your text below (max 500 words)",
-                height=510,
+                height=510,placeholder='''Conventional wisdom says house prices double every decade, but in a string of sea- and tree-change hotspots prices have jumped that far in five years or less.
+
+The combination of COVID lockdowns, remote working, ultra-low interest rates and cash saved from cancelled overseas holidays has supercharged price growth in holiday towns, some of which have become permanent destinations. (Supplied / Nine)In cooler climes, house prices in the ski fields of both Victoria and New South Wales have jumped. Prices are less likely to have doubled in such a short time-frame within the capital cities. Separate research from Ray White showed prices have at least doubled in the last decade in Sydney, Hobart and Canberra, and increased by 90.2 per cent in Melbourne.'''
+                
             )
 
             MAX_WORDS = 500
