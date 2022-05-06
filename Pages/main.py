@@ -36,7 +36,7 @@ def main_page(username):
     # st.sidebar.image(image,width=200)
     genre = st.sidebar.radio(
      "Options: ",
-     ('Home','📰 News','ᓬ News+Social Media','🗺 Explore Models','🙃About Us','👩🏽‍🎨Careers'))    
+     ('Home','📰 News','ᓬ News+Social Media','🗺 Explore Models'))    
 
     country_list = ['India ', 'Russia', ]
     st.sidebar.markdown('<p><b><i><h2>Filters for News</p>',unsafe_allow_html=True)

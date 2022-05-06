@@ -21,7 +21,7 @@ jobs:
           python-version: '3.8'
 
       - name: 💿 Install Python package
-        run: pip install -r Pages/requirements.txt
+        run: pip install -r requirements.txt
 
       - name: 🚀 Run Automation
         run: pytest
