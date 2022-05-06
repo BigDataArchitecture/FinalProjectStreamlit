@@ -6,6 +6,7 @@ dnspython
 bokeh
 keybert
 flair
+setuptools==45
 transformers
 seaborn
 streamlit_authenticator
