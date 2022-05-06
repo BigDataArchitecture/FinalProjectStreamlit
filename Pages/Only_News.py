@@ -5,7 +5,7 @@ from helper import change,keyword_beautificaiton,get_image,clear_summary
 from PIL import Image
 import json
 import email_html
-# import NER
+import NER
 from datetime import datetime
 now = datetime.now()
  
@@ -13,11 +13,11 @@ now = datetime.now()
 
 
 def news_main(country_selections,topic_selections,username):
-    # a = st.text_input("Ask us a Question")
-    # list_keyword = NER.NER_keywrod(a)
     a = st.text_input("Ask us a Question")
-    if len(a)> 0:
-        all_data= Get_data.regex_filter_data(a)
+    list_keyword = NER.NER_keywrod(a)
+    a = st.text_input("Ask us a Question")
+    if len(list_keyword)> 0:
+        all_data= Get_data.regex_filter_data(list_keyword)
     else:
         all_data = Get_data.filter_data(country_selections,topic_selections)
     def news_beautification(column,news_title,news_sentiment_score,news_sentiment_text,keywords,save_path,summary,country,source):
