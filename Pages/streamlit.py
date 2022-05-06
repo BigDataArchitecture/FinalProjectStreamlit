@@ -8,7 +8,7 @@ from datetime import datetime
 now = datetime.now()
 
 st.set_page_config(
-    page_title="BERT Keyword Extractor",
+    page_title="BeeNews",
     page_icon="🎈",
     layout="wide"
 )
