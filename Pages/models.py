@@ -71,8 +71,8 @@ def explore_models():
                 "Sentiments")
             summary = st.checkbox(
                 "Summary")
-            NER = st.checkbox(
-                "NER")
+            # NER = st.checkbox(
+            #     "NER")
             
         with c2:
             doc = st.text_area(
@@ -158,12 +158,12 @@ def explore_models():
         stripped_string = replace_fun(an['answer'])
         stripped_string = camel_case(an['answer'])
         st.write(stripped_string)
-    if NER:
-        from spacy_streamlit import load_model
-        # spacy_model = st.sidebar.selectbox("Model name", ["en_core_web_sm", "en_core_web_md"])
-        # nlp = load_model("en_core_web_sm")
-        # doc = nlp(doc)
-        # visualize_ner(doc,labels=nlp.get_pipe("ner").labels)
+    # if NER:
+    #     from spacy_streamlit import load_model,visualize_ner
+    #     # spacy_model = st.sidebar.selectbox("Model name", ["en_core_web_sm", "en_core_web_md"])
+    #     nlp = load_model("en_core_web_sm")
+    #     doc = nlp(doc)
+    #     visualize_ner(doc,labels=nlp.get_pipe("ner").labels)
         # def load_model(name: str) -> spacy.language.Language:
         #     """Load a spaCy model."""
         #     return spacy.load(name)
