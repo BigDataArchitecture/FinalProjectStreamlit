@@ -3,7 +3,6 @@ import Get_data
 from helper import change,keyword_beautificaiton,get_image,clear_summary
 from PIL import Image
 from Twitter_Code import twitter_beautification
-from bokeh.models.widgets import Div
 
 def news_main_twitter(country_selections,topic_selections):
     all_data = Get_data.filter_data(country_selections,topic_selections)
