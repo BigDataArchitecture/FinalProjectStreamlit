@@ -8,12 +8,11 @@ import email_html
 # import NER
 from datetime import datetime
 now = datetime.now()
- 
-
 
 
 def news_main(country_selections,topic_selections,username):
     a = st.text_input("Ask us a Question")
+    print(a)
     # list_keyword = NER.NER_keywrod(a)
     if len(a)> 0:
         all_data= Get_data.regex_filter_data(a)
