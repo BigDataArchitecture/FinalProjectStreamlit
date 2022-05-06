@@ -1,6 +1,6 @@
 # content of test_sample.py
 from helper import change,keyword_beautificaiton,get_image,clear_summary
-from Get_data import access_data,filter_data
+from Get_data import access_data,filter_data,regex_filter_data
 
 #Test 1 to test color
 def test_change_function():
@@ -62,8 +62,8 @@ def test_access_data():
             counter = counter + 1
     assert(counter > 0)
 
-def test_column():
-    data = filter_data("Australia","Business")
+def test_regex_access_data():
+    data = regex_filter_data("America")
     counter = 0
     for i in data:
         if counter > 0:
@@ -71,4 +71,15 @@ def test_column():
         else:
             counter = counter + 1
     assert(counter > 0)
+
+
+# def test_column():
+#     data = filter_data("Australia","Business")
+#     counter = 0
+#     for i in data:
+#         if counter > 0:
+#             break
+#         else:
+#             counter = counter + 1
+#     assert(counter > 0)
 
