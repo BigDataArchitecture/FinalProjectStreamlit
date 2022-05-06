@@ -3,7 +3,6 @@ requests==2.27.1
 numpy==1.17.1
 click<=8.0.4
 dnspython
-bokeh
 keybert
 flair
 setuptools==45
