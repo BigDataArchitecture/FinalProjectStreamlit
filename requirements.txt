@@ -13,7 +13,8 @@ matplotlib==3.5.1
 pytest
 coverage
 # spacy_streamlit
-spacy>=2.0.0,<3.0.0
+# spacy_streamlit
+# spacy>=2.0.0,<3.0.0
 
 # spacy_streamlit
 # https://github.com/explosion/spacy-models/releases/download/zh_core_web_sm-3.0.0/zh_core_web_sm-3.0.0-py3-none-any.whl#egg=zh_core_web_sm==3.0.0
